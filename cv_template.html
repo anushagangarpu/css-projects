@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main>.content>img{
+            width:400px;
+            height: 300px;
+        }
+        .main{
+            width:400px;
+            border:3px solid lightgrey;
+        }
+        .main>.content>h2{
+            margin-top:-50px;
+            margin-left: 20px;
+            color:black;
+        }
+        .main>.content>p{
+            margin-top: 30px;
+            margin-left: 70px;
+        }
+        .skills>h2{
+            margin-left: 50px;
+        }
+        .parent>.main>p{
+            padding-left: 10px;
+        }
+        .bar{
+            width:90%;
+            height:20px;
+            background-color: lightgray;
+            margin-left: 20px;
+            border-radius: 20px;
+        }
+        .bar>.photoshop{
+           width:90%;
+            height:20px;
+            background-color: teal;
+            text-align: center;
+            color: white;
+            border-radius: 20px; 
+        }
+        .bar>.photography{
+            width:80%;
+            height:20px;
+            background-color: teal;
+            text-align: center;
+            color: white;
+            border-radius: 20px;   
+        }
+        .bar>.illustrator{
+            width:75%;
+            height:20px;
+            background-color: teal;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+        }
+        .bar>.media{
+            width:50%;
+            height:20px;
+            background-color: teal;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+        }
+        .lang>h2{
+            margin-left: 50px;
+        }
+        .bar>.eng{
+            width:100%;
+            height:20px;
+            background-color: teal;
+            color: white;
+            border-radius: 20px;
+        }
+        .bar>.span{
+            width:60%;
+            height:20px;
+            background-color: teal;
+            color: white;
+            border-radius: 20px;
+        }
+        .bar>.ger{
+            width:20%;
+            height:20px;
+            background-color: teal;
+            color: white;
+            border-radius: 20px;
+        }
+        .main{
+            display: inline-block;
+            vertical-align: top;
+        }
+        .rightside{
+            display: inline-block;
+            vertical-align: top;
+            width: 800px;
+            margin-left: 15px;
+        }
+        .work{
+            width: 100%;
+            border:3px solid lightgrey;
+            
+        }
+        .education{
+            width: 100%;
+            border:3px solid lightgrey;
+            margin-top: 20px;
+            padding: 20px;
+        }
+        .work>h1{
+            padding-left: 70px;
+        }
+        .work>h3{
+            margin-top: 30px;
+            padding-left: 15px;
+        }
+        .work>p{
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+        .work>.date1{
+            color:teal;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        .work>.current{
+            background-color: teal;
+            color: white;
+            display: inline-block;
+            padding: 5px 5px;
+            margin-left: 5px;
+        }
+        .work>.date2{
+            color: teal;
+            margin-left: 20px;
+        }
+        .work>.date3{
+            color: teal;
+            margin-left: 20px;
+        }
+        .work>hr{
+            margin-top: 20px;
+        }
+        .rightside>.education h1{
+            padding-left: 70px;
+        }
+        .rightside>.education h3{
+            margin-top: 30px;
+            padding-left: 15px;
+        }
+        .rightside>.education p{
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+        .w3schls{
+            margin-bottom: 50px;
+        }
+        .london_schl{
+            margin-bottom: 50px;
+        }
+        .coding_schl{
+            margin-bottom: 30px;
+        }
+        .w3schls>.date{
+            color: teal;
+        }
+        .london_schl>.date{
+            color: teal;
+        }
+        .coding_schl>.date{
+            color: teal;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="main">
+            <div class="content">
+            <img src="https://www.w3schools.com/w3images/avatar_hat.jpg" alt="">
+                <h2>Jane Doe</h2>
+                <p>Designer</p>
+                <p>London, UK</p>
+                <p>ex@mail.com</p>
+                <p>1224435534</p>
+            </div>
+            <hr>
+            <div class="skills">
+                <h2>Skills</h2>
+            </div>
+            <p>Adobe Photoshop</p>
+            <div class="bar">
+                <div class="photoshop">90%</div>
+            </div>
+            <p>Photography</p>
+            <div class="bar">
+                <div class="photography">80%</div>
+            </div>
+            <p>Illustrator</p>
+            <div class="bar">
+                <div class="illustrator">75%</div>
+            </div>
+            <p>Media</p>
+            <div class="bar">
+                <div class="media">50%</div>
+            </div>
+            <hr>
+            <div class="lang">
+                <h2>Languages</h2>
+            </div>
+            <p>English</p>
+            <div class="bar">
+                <div class="eng"></div>
+            </div>
+            <p>Spanish</p>
+            <div class="bar">
+                <div class="span"></div>
+            </div>
+            <p>German</p>
+            <div class="bar">
+                <div class="ger"></div>
+            </div>
+            <br>
+        </div>
+        <div class="rightside">
+            <div class="work">
+                <h1>Work Experience</h1>
+                <h3>Front End Developer / W3schools.com</h3>
+                <p class="date1">Jan 2015 -</p>
+                    <p class="current"> Current</p>
+                <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt 
+                    aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde 
+                    doloremque repellendus iure, iste.</p>
+                <hr>
+                <h3>Web Developer / something.com</h3>
+                <p class="date2">Mar 2012 - Dec 2014</p>
+                <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt 
+                    aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde 
+                    doloremque repellendus iure, iste.</p>
+                <hr>
+                <h3>Graphic Designer / designsomething.com</h3>
+                <p class="date3">Jun 2010 - Mar 2012</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+            </div>
+            <div class="education">
+                <h1>Education</h1>
+                <div class="w3schls">
+                    <h3>W3Schools.com</h3>
+                    <p class="date">Forever</p>
+                    <p>Web Development! All I need to know in one place</p>
+                </div>
+                <div class="london_schl">
+                    <h3>London Business School</h3>
+                    <p class="date">2013 - 2015</p>
+                    <p>Master Degree</p>
+                </div>
+                <div class="coding_schl">
+                    <h3>School of Coding</h3>
+                    <p class="date">2010 - 2013</p>
+                    <p>Bachelor Degree</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

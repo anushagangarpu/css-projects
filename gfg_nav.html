@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav{
+            width: 100%;
+            background-color: white;
+            /* padding: 15px 20px; */
+            /* border: 1px solid lightgrey; */
+            position: fixed;
+            top: 0px;
+            left: 0px;
+        }
+        .item{
+            display: inline-block;
+            position: relative;
+            margin-left: 40px;
+        }
+        /* .item>h2{
+            padding: 10px 20px;
+        } */
+         .item>h2:hover{
+            background-color: green;
+            color: white;
+            /* border-radius: 5px; */
+         }
+         .dropdown{
+            width: 250px;
+            background-color: white;
+            border: 1px solid lightgrey;
+            border-top-color: green;
+            border-top-width: 3px;
+            position: absolute;
+            top: 50px;
+            left:0px;
+            display: none;
+         }
+         .dropdown>p{
+            padding: 15px;
+            /* transition: 1s; */
+         }
+         .dropdown>p:hover{
+            background-color: lightgrey;
+            /* padding-left: 25px; */
+            color: black;
+         }
+        .item:hover .dropdown{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav">
+        <div class="item">
+            <h2>Courses</h2>
+            <div class="dropdown">
+                <p>DSA/Placements</p>
+                <p>GATE Prep</p>
+                <p>Data Analytics/Data Science</p>
+                <p>Development</p>
+                <p>Cloud/DevOps</p>
+                <p>Programming Languages</p>
+                <p>All Courses</p>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Tutorials</h2>
+            <div class="dropdown">
+                <p>Python</p>
+                <p>Java</p>
+                <p>DSA</p>
+                <p>ML & Data Science</p>
+                <p>Interview Corner</p>
+                <p>Programming Languages</p>
+                <p>Web Development</p>
+                <p>GATE</p>
+                <p>CS Subjects</p>
+                <p>DevOps</p>
+                <p>school Learning</p>
+                <p>Software and Tools</p>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Practice</h2>
+            <div class="dropdown">
+                <p>Summer Skillup</p>
+                <p>Practice Coding Problems</p>
+                <p>Problem of the Day</p>
+                <p>Connect 1:1 with Experts</p>
+            </div>
+        </div>
+        <div class="item">
+            <h2>Jobs</h2>
+            <div class="dropdown">
+                <p>Apply Now!</p>
+                <p>Post Jobs</p>
+                <p>Jobs Updates</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

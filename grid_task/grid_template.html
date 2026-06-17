@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Task</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .parent{
+           height: 100vh;
+           display: grid;
+           grid-template-columns: repeat(6,1fr);
+           grid-template-rows: repeat(6,1fr);
+           grid-template-areas:
+           'img1 img2 img2 img2 img3 img4'
+           'img5 img2 img2 img2 img6 img7'
+           'img8 img9 img10 img11 img11 img11 '
+           'img12 img13 img14 img11 img11 img11'
+           'img15 img16 img16 img17 img18 img19'
+           'img20 img16 img16 img21 img21 img21';
+           gap: 5px;
+        }
+        .parent div{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .parent div img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .img1{grid-area: img1;}
+        .img2{grid-area: img2;}
+        .img3{grid-area: img3;}
+        .img4{grid-area: img4;}
+        .img5{grid-area: img5;}
+        .img6{grid-area: img6;}
+        .img7{grid-area: img7;}
+        .img8{grid-area: img8;}
+        .img9{grid-area: img9;}
+        .img10{grid-area: img10;}
+        .img11{grid-area: img11;}
+        .img12{grid-area: img12;}
+        .img13{grid-area: img13;}
+        .img14{grid-area: img14;}
+        .img15{grid-area: img15;}
+        .img16{grid-area: img16;}
+        .img17{grid-area: img17;}
+        .img18{grid-area: img18;}
+        .img19{grid-area: img19;}
+        .img20{grid-area: img20;}
+        .img21{grid-area: img21;}
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="img1"><img src="https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-nature-mountain-scenery-with-flowers-free-photo.jpg?w=2210&quality=70" alt=""></div>
+        <div class="img2"><img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Desktop-hd-3d-nature-images-download.jpg" alt=""></div>
+        <div class="img3"><img src="https://images.pexels.com/photos/414612/pexels-photo-414612.jpeg?cs=srgb&dl=pexels-souvenirpixels-414612.jpg&fm=jpg" alt=""></div>
+        <div class="img4"><img src="https://static.vecteezy.com/system/resources/previews/030/341/827/non_2x/large-lonely-tree-with-green-natural-leaves-on-the-field-free-photo.jpg" alt=""></div>
+        <div class="img5"><img src="https://cdn.pixabay.com/photo/2018/02/02/17/29/nature-3125912_640.jpg" alt=""></div>
+        <div class="img6"><img src="https://images.pexels.com/photos/31256342/pexels-photo-31256342.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31256342.jpg&fm=jpg" alt=""></div>
+        <div class="img7"><img src="https://images.pexels.com/photos/33866837/pexels-photo-33866837.jpeg?cs=srgb&dl=pexels-marri-shyam-366418-33866837.jpg&fm=jpg" alt=""></div>
+        <div class="img8"><img src="https://images.pexels.com/photos/31750780/pexels-photo-31750780.jpeg?cs=srgb&dl=pexels-optical-chemist-340351297-31750780.jpg&fm=jpg" alt=""></div>
+        <div class="img9"><img src="https://images.pexels.com/photos/31438472/pexels-photo-31438472.jpeg?cs=srgb&dl=pexels-2150381842-31438472.jpg&fm=jpg" alt=""></div>
+        <div class="img10"><img src="https://hdqwalls.com/download/nature-scenery-wallpaper-2560x1440.jpg" alt=""></div>
+        <div class="img11"><img src="https://www.pixelstalk.net/wp-content/uploads/2016/07/Background-Beautiful-Nature-Images-HD.jpg" alt=""></div>
+        <div class="img12"><img src="https://images.pexels.com/photos/863963/pexels-photo-863963.jpeg?cs=srgb&dl=pexels-blaque-x-863963.jpg&fm=jpg" alt=""></div>
+        <div class="img13"><img src="https://images.pexels.com/photos/31435012/pexels-photo-31435012.jpeg?cs=srgb&dl=pexels-mechi-torralva-1270583046-31435012.jpg&fm=jpg" alt=""></div>
+        <div class="img14"><img src="https://static.vecteezy.com/system/resources/thumbnails/070/251/304/small_2x/serene-forest-stream-with-sun-rays-illuminating-lush-greenery-and-lily-pads-floating-peacefully-photo.jpg" alt=""></div>
+        <div class="img15"><img src="https://static.vecteezy.com/system/resources/previews/041/879/115/non_2x/ai-generated-earth-globe-on-autumn-leaves-in-nature-with-sunlight-bokeh-concept-of-environmental-protection-ecology-sustainable-living-and-preserving-the-planet-photo.jpg" alt=""></div>
+        <div class="img16"><img src="https://images.pexels.com/photos/27744185/pexels-photo-27744185.jpeg?cs=srgb&dl=pexels-mnannapaneni-27744185.jpg&fm=jpg" alt=""></div>
+        <div class="img17"><img src="https://static.vecteezy.com/system/resources/thumbnails/063/068/908/small_2x/daisies-growing-in-a-field-with-warm-sunlight-during-sunset-in-a-serene-natural-environment-free-photo.jpg" alt=""></div>
+        <div class="img18"><img src="https://static.vecteezy.com/system/resources/previews/022/448/291/large_2x/save-earth-day-poster-environment-day-nature-green-ai-generative-glossy-background-images-tree-and-water-free-photo.jpg" alt=""></div>
+        <div class="img19"><img src="https://www.stockvault.net/data/2011/05/31/124348/thumb16.jpg" alt=""></div>
+        <div class="img20"><img src="https://tse2.mm.bing.net/th/id/OIP.iYRhbqsC8waGDw1chYGPvAHaEK?pid=Api&P=0&h=180" alt=""></div>
+        <div class="img21"><img src="https://i.etsystatic.com/51307761/r/il/b24cee/6722658765/il_fullxfull.6722658765_tm6s.jpg" alt=""></div>
+    </div>
+</body>
+</html>

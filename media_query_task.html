@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .food{
+            text-align: center;
+            margin:30px 
+        }
+        .parent{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:center;
+            gap: 20px;
+        }
+        .child{
+            width:22%;
+        }
+        .child>img{
+            width:100%;
+        }
+        .num>p{
+            display: inline-block;
+            padding: 8px 12px;
+        }
+        .one{
+            background-color: black;
+            color: white;
+        }
+        .num{
+            text-align: center;
+            margin: 40px 0;
+        }
+        .about{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
+        .about>img{
+            width:100%;
+            max-width: 800px;
+            height: auto;
+        }
+        .about h1,.about h2,.about p{
+            margin-top: 20px;
+        }
+        .part{
+            width: 90%;
+            margin:50px auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer,.blogposts,.tags{
+            flex: 1;
+            min-width: 250px;
+        }
+        .blogposts .post img{
+            width: 70px;
+            height: 70px;
+        }
+        .blogposts .text{
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 10px;
+        }
+        .tags p{
+            background:grey;
+            color:white;
+            padding:5px 8px;
+            display:inline-block;
+            margin:3px;
+        }
+        .black{
+            background-color: black !important;
+        }
+        @media screen and (min-width:320px) and (max-width:426px){
+        .child{
+            width:100%
+        }
+        .about{
+            width: 95%;
+        }
+        .part{
+            flex-direction: column;
+        }
+        .footer,.blogposts,.tags{
+            width: 100%;
+        }
+        }   
+        @media screen and (min-width:426px) and (max-width:769px){
+            .child{
+                width: 45%;
+            }
+            .about p {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="food">My Food</h1>
+    <div class="parent">
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="">
+            <h2>The Perfect Sandwich, A Real NYC Classic</h2>
+            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/steak.jpg" alt="" >
+            <h2>Let Me Tell You About This Steak</h2>
+            <p>Let Me Tell You About This Steak</p>
+        </div>
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/cherries.jpg" alt="" >
+            <h2>Cherries, interrupted</h2>
+            <p>Lorem ipsum text praesent tincidunt ipsum lipsum. <br>What else?</p>
+        </div>
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/wine.jpg" alt="">
+            <h2>Once Again, Robust Wine and Vegetable Pasta</h2>
+            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+    </div>
+    <div class="parent">
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/popsicle.jpg" alt="">
+            <h2>All I Need Is a Popsicle</h2>
+            <p>Lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/salmon.jpg" alt="">
+            <h2>Lorem ipsum text praesent tincidunt ipsum lipsum.</h2>
+            <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent 
+                tincidunt ipsum lipsum.</p>
+        </div>
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/sandwich.jpg" alt="">
+            <h2>The Perfect Sandwich, A Real Classic</h2>
+            <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+        <div class="child">
+            <img src="https://www.w3schools.com/w3images/croissant.jpg" alt="">
+            <h2>Le French</h2>
+            <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
+        </div>
+    </div>
+    <div class="num">
+        <p>&lt;</p>
+        <p>&lt;</p>
+        <p class="one">1</p>
+        <p>2</p>
+        <p>3</p>
+        <p>4</p>
+        <p>&gt;</p>
+        <p>&gt;</p>
+    </div>
+    <div class="about">
+        <h1>About Me, The Food Man</h1>
+        <img src="https://www.w3schools.com/w3images/chef.jpg" alt="">
+       <h2>I am Who I Am!</h2>
+       <p>With Passion For Real, Good Food</p>
+       <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and
+         an interest of lorem ipsum and mauris neque quam blog. I want to share my world with you. 
+         Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, 
+         ultricies congue gravida diam non fringilla. Praesent tincidunt sed tellus ut rutrum. 
+         Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non 
+         fringilla.</p>
+    </div>
+    <div class="part">
+        <div class="footer">
+            <h2>FOOTER</h2>
+            <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta 
+                lectus vitae, ultricies congue gravida diam non fringilla.</p>
+        </div>
+        <div class="blogposts">
+            <h2>BLOG POSTS</h2>
+            <div class="post">
+                <img src="https://www.w3schools.com/w3images/workshop.jpg" alt="">
+                <div class="text">
+                    <h3>Lorem</h3>
+                    <p>Sed mattis nunc</p>
+                </div>
+            </div>
+            <hr>
+            <div class="post">
+                <img src="https://www.w3schools.com/w3images/gondol.jpg" alt="">
+                <div class="text">
+                    <h3>Ipsum</h3>
+                    <p>Praes tinci sed</p>
+                </div>
+            </div>
+        </div>
+        <div class="tags">
+            <h2>POPULAR TAGS</h2>
+            <p class="black">Travel</p>
+                <p>New York</p>
+                <p>Dinner</p>
+                <p>Salmon</p>
+                <p>France</p>
+                <p>Drinks</p>
+                <p>Ideas</p>
+                <p>Flavors</p>
+                <p>Cuisine</p>
+                <p>Chicken</p>
+                <p>Dressing</p>
+                <p>Fried</p>
+                <p>Fish</p>
+                <p>Duck</p>
+        </div>
+    </div>
+</body>
+</html>

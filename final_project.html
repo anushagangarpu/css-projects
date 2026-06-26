@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box ;
+            background-image:url("https://html5up.net/uploads/demos/spectral/images/banner.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .navbar{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 20px;
+            box-sizing: border-box;
+            z-index: 10;
+            border-bottom: 1px solid lightgray;
+        }
+        .left{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .logo{
+            color: gray;
+            font-size: 22px;
+            margin-right: 12px;
+        }
+        .devices{
+            display: flex;
+            align-items: center;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .devices button{
+            padding: 10px 20px;
+            border: none;
+            color: gray;
+            background-color: white;
+            transition: 0.3s;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        .devices .active{
+            background-color: gray;
+            color: white;
+        }
+        .devices button:hover{
+            background-color: lightgray;
+            color: white;
+        }
+        .arrow{
+            width: 50px;
+            height: 37px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            background-color: white;
+            color: gray;
+            font-size: 24px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-left: -250px;
+        }
+        .arrow:hover{
+            border: 1px solid lightcoral;
+            color:lightcoral;
+        }
+        .right{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .post{
+            width: 135px;
+            height: 40px;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            background-color: white;
+            border:1px solid lightgray;
+            padding-right: 8px;
+            border-radius: 5px;
+        }
+        .postinside{
+            background-color:black;
+            color: white;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        .back{
+            padding: 10px 22px;
+            border: 1px solid lightgray;
+            border-radius: 5px;
+            background-color: white;
+            color: gray;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .back:hover{
+            border:1px solid lightcoral;
+            color: lightcoral;
+        }
+        .download{
+            padding: 10px 22px;
+            border: none;
+            background-color: lightcoral;
+            color: white;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bg{
+            min-height: 100vh;
+            position:relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .menu-bar{
+            position: fixed;
+            top: 90px;
+            right: 35px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            text-decoration: none;
+            z-index: 100;
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+        .menu-lines{
+            font-size: 22px;
+            margin-top: -5px;
+            cursor: pointer;
+        }
+        .sidebar{
+            position: fixed;
+            top: 60px;
+            right: -350px;
+            width: 320px;
+            height: 100vh;
+            background-color: turquoise;
+            padding-top: 80px;
+            transition: 0.5s;
+            z-index: 1000;
+        }
+        #sidebar:target{
+            right: 0;
+        }
+        .sidebar a{
+            display: block;
+            color: white;
+            padding: 18px 0px;
+            margin: 0px 35px;
+            font-size: 18px;
+            border-bottom: 1px solid lightcyan;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .close-btn{
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            border: none !important;
+        }
+        .bg::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0,0,0,0.8);
+            animation: overlay-light-effect 3s forwards;
+        }
+        .content{
+            position:relative;
+            z-index: 5;
+            text-align: center;
+            color: white;
+            width: 700px;
+            margin-top: 120px;
+        }
+        .content h1{
+            font-size: 35px;
+            letter-spacing: 5px;
+            margin: 0px;
+            opacity: 0;
+            animation: heading-visibility 1s forwards;
+            animation-delay: 1s;
+        }
+        .top-line{
+            width:300px;
+            height: 2px;
+            background-color: white;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom:10px;
+            transform:translateX(100px);
+            animation: top-line-movement 1s forwards;
+            opacity: 0;
+       }
+       .bottom-line{
+            width:300px;
+            height: 2px;
+            background-color: white;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            transform: translateX(-100px);
+            animation: bottom-line-movement 1s forwards;
+            opacity: 0;
+       }
+       .content p{
+        margin-top: 35px;
+        line-height: 45px;
+        letter-spacing: 3px;
+        opacity: 0;
+        animation: paragraph-visibility 1s forwards;
+        animation-delay: 2s;
+        font-size: 20px;
+       }
+       .underline{
+        border-bottom: 1px dotted white;
+        padding-bottom: 2px;
+       }
+       .content button{
+        margin-top: 5px;
+        padding: 15px 30px;
+        border:none;
+        background-color: coral;
+        color: white;
+        border-radius: 5px;
+        font-size: 12px;
+        letter-spacing: 3px;
+        cursor: pointer;
+        opacity: 0;
+        animation: button-visibility 1s forwards;
+        animation-delay: 2s;
+       }
+       button:hover{
+        background-color: lightcoral;
+       }
+       .learn-more{
+        margin-top: 60px;
+        opacity: 0;
+        transform: translateY(120px);
+        animation: learn-upward-movement 1.5s forwards;
+        animation-delay: 3s;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        letter-spacing: 3px;
+       }
+       @keyframes top-line-movement{
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+       }
+       @keyframes bottom-line-movement{
+        to{
+            transform: translateX(0);
+            opacity: 1;
+        }
+       }
+       @keyframes heading-visibility{
+        to{
+            opacity: 1;
+        }
+       }
+       @keyframes paragraph-visibility{
+        to{
+            opacity: 1;
+        }
+       }
+       @keyframes button-visibility{
+        to{
+            opacity: 1;
+        }
+       }
+       @keyframes learn-more-upwards-movement{
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+       }
+       @keyframes overlay-light-effect{
+        to{
+            background-color: rgba(0,0,0,0.5);
+        }
+       }
+       @keyframes backgroung-appearance{
+        from{
+            filter: brightness(0);
+        }
+        to{
+            filter: brightness(1);
+        }
+       }
+       @keyframes learn-upward-movement{
+        to{
+            opacity: 1;
+            transform: translateY(0);
+        }
+       }
+       .section2{
+        background-color: turquoise;
+        position: relative;
+        }
+       .section2-content {
+        text-align: center;
+        color: white;
+        padding-top: 120px;
+       }
+       .section2-content h2{
+        width: 65%;
+        margin: auto;
+        font-size: 20px;
+        line-height: 30px;
+        letter-spacing: 3px;
+        }
+       .section2-content hr{
+        width: 65%;
+        border: 1px solid rgba(0,0,0,0.3);
+       }
+       .section2-content p{
+        width: 75%;
+        margin:auto;
+        font-size: 20px;
+        letter-spacing: 2px;
+        line-height: 30px;
+       }
+       .fixed-navbar{
+        position: sticky;
+        top: 50px;
+        width: 100%;
+        height: 60px;
+        background-color: rgba(0,0,0,0.9);
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        padding: 0px 30px;
+        z-index: 999;
+        box-sizing: border-box;
+        border-top: none;
+       }
+       .fixed-logo{
+        color: white;
+        font-size: 20px;
+        letter-spacing: 3px;
+        cursor: pointer;
+       }
+       .fixed-menu{
+        color: white;
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-size: 19px;
+        margin-right: 10px;
+        cursor: pointer;
+       }
+       .icons{
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        flex-wrap: wrap;
+        }
+       .icon-box1,.icon-box2,.icon-box3{
+        width: 60px;
+        height: 60px;
+        border: 2px solid rgba(0,0,0,0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: rotate(45deg);
+       }
+       .icon-box1 i{
+        color: seagreen;
+        font-size: 30px;
+        transform: rotate(-45deg);
+       }
+       .icon-box2 i{
+        color: blue;
+        font-size: 30px;
+        transform: rotate(-45deg);
+       }
+       .icon-box3 i{
+        color: blueviolet;
+        font-size: 30px;
+        transform: rotate(-45deg);
+       }
+       .section3-row{
+        display: flex;
+        width: 100%;
+        height: 350px;
+       }
+       .img{
+        width: 50%;
+       }
+       .img img{
+        width: 100%;
+        height: 100%;
+        display: block;
+       }
+       .section3-content{
+        width: 70%;
+        background-color: rgba(0,0,0,0.9);
+        color: white;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 70px;
+       }
+       .section3-content h1{
+        font-size: 25px;
+        letter-spacing: 3px;
+        line-height: 1.5;
+       }
+       .section3-content p{
+        margin-top: 15px;
+        font-size: 16px;
+        letter-spacing: 2px;
+        line-height: 1.8;
+        color: lightgray;
+       }
+       .section4{
+        background-color: mediumpurple;
+        padding: 80px;
+        color: white;
+       }
+       .section4-content{
+        text-align: center;
+       }
+       .section4-content h2{
+        font-size:20px ;
+        letter-spacing: 3px;
+       }
+       .section4-content hr{
+        width: 65%;
+        border: 1px solid rgba(0,0,0,0.3);
+       }
+       .section4-content p{
+        font-size: 15px;
+        letter-spacing: 2px;
+        line-height: 20px;
+        width: 75%;
+        margin: auto;
+       }
+       .section4-container{
+        margin: 60px auto 0 auto ;
+        width: 70%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap:0px;
+        place-content: center;
+       }
+       .box{
+        display: flex;
+        gap: 20px;
+        border: 1px solid rgba(0,0,0,0.08);
+        padding:25px 25px;
+       }
+       .box i{
+        font-size: 35px;
+        color: turquoise;
+        margin-top: 20px;
+       }
+       .box-content h2{
+        font-size: 20px;
+        letter-spacing: 3px;
+        margin-bottom:20px;
+        }
+        .box-content p{
+            color: lightgray;
+            font-size: 20px;
+            line-height: 25px;
+        }
+        .box:nth-child(1),.box:nth-child(4),.box:nth-child(5){
+            background-color: rgba(0,0,0,0.08);
+        }
+        .box:nth-child(2),.box:nth-child(3),.box:nth-child(6){
+            background-color: rgba(0,0,0,0.03);
+        }
+        .section5{
+            padding: 60px 0px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .section5-overlay{
+            width: 60%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+        .section5-left h1{
+            font-size: 20px;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+        .section5-left p{
+            font-size: 20px;
+            line-height: 25px;
+            letter-spacing: 1px;
+            color: lightgray;
+        }
+        .section5-right{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .activate-btn{
+            width: 200px;
+            padding: 18px;
+            border: none;
+            background-color: orangered;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 3px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .activate-btn:hover{
+            background-color: coral;
+        }
+        .learn-btn{
+            width: 200px;
+            padding: 18px;
+            border: 2px solid white;
+            background-color: transparent;
+            color: white;
+            font-size: 15px;
+            letter-spacing: 3px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .learn-btn:hover{
+            background-color: rgba(255,255,255,0.15);
+            color: white;
+        }
+        .footer{
+            background-color: rgba(0,0,0,0.85);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .footer-icons{
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        .footer-icons i{
+            color: rgba(255,255,255,0.7);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .footer-icons i:hover{
+            color: white;
+        }
+        .footer-text{
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            color: rgba(255,255,255,0.6);
+            font-size: 12px;
+            letter-spacing: 3px;
+        }
+        .footer-text u{
+            text-underline-offset: 5px;
+        }
+        .footer-text u:hover{
+            color: white;
+            cursor: pointer;
+        }
+        /* ------------ Tablet (max-width:1024) --------------- */
+        @media screen and (max-width:1024px){
+            .navbar{
+            padding: 0px 10px;
+            height: 55px;
+            }
+            .logo{
+            font-size: 18px;
+            }
+            .devices button{
+            padding: 8px 12px;
+            font-size: 13px;
+            }
+            .arrow{
+            margin-left:-240px;
+            width: 42px;
+            height: 34px;
+            font-size: 20px;
+            }
+            .right{
+            gap: 8px;
+            }
+            .post{
+            width: 100px;
+            height: 35px;
+            }
+            .back,.download{
+            padding: 8px 14px;
+            font-size: 12px;
+            }
+            .content{
+                width: 90%;
+            }
+            .content h1{
+                font-size: 32px;
+            }
+            .content p{
+                font-size: 18px;
+                line-height: 38px;
+            }
+            .section3-row{
+               height: auto;
+            }
+            .section3-content{
+                padding: 40px;
+            }
+            .section4-container{
+                width: 90%;
+            }
+            .section5-overlay{
+                width: 85%;
+            }
+        }
+        /* -------------Tablet potrait (max-width:768px)------------- */
+        @media screen and (max-width:768px){
+            .navbar{
+                padding: 0px 8px;
+                overflow-x: auto;
+            }
+            .left{
+                gap: 5px;
+            }
+            .logo{
+                font-size: 16px;
+            }
+            .devices button{
+                padding: 7px 10px;
+                font-size: 11px;
+            }
+            .arrow{
+                display: none;
+            }
+            .post{
+                display: none;
+            }
+            .back{
+                padding: 7px 10px;
+                font-size: 11px;
+            }
+            .download{
+                padding: 7px 10px;
+                font-size: 11px;
+            }
+            .content{
+                width: 90%;
+            }
+            .content h1{
+                font-size: 28px;
+            }
+            .content p{
+                font-size: 16px;
+                line-height: 32px;
+            }
+            .top-line,.bottom-line{
+                width: 220px;
+            }
+            .section2-content{
+                padding: 80px 20px 0px;
+            }
+            .section2-content h2{
+                font-size: 18px;
+                line-height: 30px;
+            }
+            .section2-content p{
+                font-size: 16px;
+                line-height: 28px;
+            }
+            .icons{
+                gap: 60px;
+            }
+            .section3-row{
+                display: flex;
+                flex-direction: column;
+            }
+            .img{
+                width: 100%;
+                order: 1;
+            }
+            .img img{
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+            .section3-content{
+                width: 100%;
+                padding: 50px 30px;
+                text-align: center;
+                order: 2;
+            }
+            .section3-content h1{
+                font-size: 23px;
+                line-height: 35px;
+            }
+            .section3-content p{
+                font-size: 16px;
+                line-height: 30px;
+            }
+            .section4{
+                padding: 60px 20px;
+            }
+            .section4-container{
+                width: 80%;
+            }
+            .box-content p{
+                width: 100%;
+                font-size: 16px;
+            }
+            .section5-overlay{
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+                width: 90%;
+            }
+            .section5-left p{
+                font-size: 16px;
+            }
+        }
+        /* ---------------mobile (max-width:480px)--------------- */
+        @media screen and (max-width:480px){
+            html,body{
+                width:100%;
+                overflow-x:hidden;
+            }
+            *{
+                box-sizing:border-box;
+            }
+            .navbar{
+                display: none;
+            }
+            .bg{
+                width:100%;
+                min-height:100vh;
+                padding-top:80px;
+                background-position:center;
+                background-size:cover;
+                margin-top: 0;
+            }
+            .menu-bar{
+                display:none;
+            }
+            .content{
+                width:100%;
+                margin:auto;
+                text-align:center;
+            }
+            .top-line,.bottom-line{
+                width:170px;
+                margin:auto;
+            }
+            .content h1{
+                font-size:22px;
+                letter-spacing:3px;
+            }
+            .content p{
+                font-size:12px;
+                line-height:28px;
+                letter-spacing:2px;
+            }
+            .content button{
+                width:160px;
+                padding:12px;
+                font-size:11px;
+            }
+            .learn-more{
+                font-size:14px;
+                margin-top:40px;
+            }
+            .fixed-navbar{
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                height:55px;
+                background:rgba(0,0,0,0.9);
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                padding:0 20px;
+                z-index:9999;
+            }
+            .fixed-logo{
+                color:white;
+                font-size:18px;
+                letter-spacing:3px;
+                font-weight:bold;
+            }
+            .fixed-menu{
+                color:white;
+                font-size:18px;
+                letter-spacing:3px;
+            }
+            .section2{
+                padding-top:55px;
+            }
+            .section2-content{
+                width:100%;
+                padding:60px 20px 20px;
+            }
+            .section2-content h2{
+                width:100%;
+                font-size:16px;
+                line-height:32px;
+            }
+            .section2-content p{
+                width:100%;
+                font-size:14px;
+                line-height:28px;
+            }
+            .icons{
+                display:flex;
+                flex-direction:row;
+                justify-content:center;
+                align-items:center;
+                gap:30px;
+                flex-wrap:nowrap;
+                padding-top:40px;
+            }
+            .section3-row{
+                width:100%;
+                display:flex;
+                flex-direction:column;
+                height:auto;
+            }
+            .img{
+                width:100%;
+            }
+            .img img{
+                width:100%;
+                height:auto;
+                display:block;
+            }
+            .section3-content{
+                width:100%;
+                padding:50px 25px;
+                text-align:center;
+            }
+            .section3-content h1{
+                font-size:20px;
+                line-height:35px;
+            }
+            .section3-content p{
+                font-size:14px;
+                line-height:28px;
+            }
+            .section4{
+                width:100%;
+                padding:50px 15px;
+            }
+            .section4-content h2{
+                font-size:16px;
+                line-height:30px;
+            }
+            .section4-content p{
+                width:100%;
+                font-size:14px;
+                line-height:28px;
+            }
+            .section4-container{
+                width:100%;
+                display:grid;
+                grid-template-columns:1fr;
+            }
+            .box{
+                width:100%;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                text-align:center;
+                padding:35px 20px;
+            }
+            .box-content h2{
+                font-size:18px;
+                line-height:30px;
+            }
+            .box-content p{
+                font-size:14px;
+                line-height:28px;
+            }
+            .section5{
+                width:100%;
+                padding:60px 20px;
+            }
+            .section5-overlay{
+                width:100%;
+                display:flex;
+                flex-direction:column;
+                gap:35px;
+                text-align:center;
+            }
+            .section5-left h1{
+                font-size:18px;
+                line-height:30px;
+            }
+            .section5-left p{
+                font-size:14px;
+                line-height:28px;
+            }
+            .section5-right{
+                width:100%;
+                align-items:center;
+            }
+            .activate-btn,.learn-btn{
+                width:100%;
+                max-width:250px;
+            }
+            .footer{
+                width:100%;
+                padding:50px 20px;
+            }
+            .footer-icons{
+                flex-wrap:wrap;
+                gap:15px;
+            }
+            .footer-text{
+                text-align:center;
+                font-size:10px;
+                line-height:24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="left">
+            <div class="logo"><b>Spectral</b></div>
+            <div class="devices">
+                <button class="active">Desktop</button>
+                <button>Tablet</button>
+                <button>Tablet(Portrait)</button>
+                <button>Mobile</button>
+            </div>
+        </div>
+        <button class="arrow"><b>↗</b></button>
+        <div class="right">
+            <button class="post"><span class="postinside">X Post</span></button>
+            <button class="back">Back</button>
+            <button class="download">Download(532,149)</button>
+        </div>
+    </div>
+    <div class="bg">
+        <a href="#sidebar" class="menu-bar">
+            <span>MENU</span>
+            <span class="menu-lines">☰</span>
+        </a>
+        <div id="sidebar" class="sidebar">
+            <a href="#" class="close-btn">✕</a>
+            <a href="#">HOME</a>
+            <a href="#">GENERIC</a>
+            <a href="#">ELEMENTS</a>
+            <a href="#">SIGN UP</a>
+            <a href="#">LOG IN</a>
+        </div>
+        <div class="content">
+            <div class="top-line"></div>
+            <h1>SPECTRAL</h1>
+            <div class="bottom-line"></div>
+            <p>ANOTHER FINE RESPONSIVE<br>
+               SITE TEMPLATE FREEBIE<br>
+               CRAFTED BY <span class="underline">HTML5 UP.</span>
+            </p>
+            <button>ACTIVATE</button>
+            <div class="learn">
+                <a href="#one" class="learn-more">LEARN MORE <br>↓</a>
+            </div>
+        </div>
+    </div>
+    <div class="fixed-navbar">
+        <div class="fixed-logo"><b>SPECTRAL</b></div>
+        <a href="#sidebar" class="fixed-menu">MENU ☰</a>
+    </div>
+    <div class="section2" id="one">
+        <div class="section2-content">
+            <h2>ARCU ALIQUET VEL LOBORTIS ATA NISL 
+            EGET AUGUE AMET ALIQUET NISL CEP DONEC</h2>
+            <hr>
+            <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend 
+               fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+        </div>
+        <div class="icons">
+            <div class="icon-box1">
+                <i class="bi bi-gem"></i>
+            </div>
+            <div class="icon-box2">
+                <i class="bi bi-heart"></i>
+            </div>
+            <div class="icon-box3">
+                <i class="bi bi-code-slash"></i>
+            </div>
+        </div>
+    </div>
+    <div class="section3">
+        <div class="section3-row">
+            <div class="img"><img src="https://html5up.net/uploads/demos/spectral/images/pic01.jpg" alt=""></div>
+            <div class="section3-content">
+                <h1>MAGNA PRIMIS LOBORTIS 
+                    SED ULLAMCORPER</h1>
+                <p>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit 
+                    imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+            </div>
+        </div>
+        <div class="section3-row">
+            <div class="section3-content">
+                <h1>TORTOR DOLORE FEUGIAT 
+                    EMENTUM MAGNA</h1>
+                <P>Aliquam ut ex ut augue consectetur interdum. Donec hendrerit 
+                    imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</P>
+            </div>
+            <div class="img"><img src="https://html5up.net/uploads/demos/spectral/images/pic02.jpg" alt=""></div>
+        </div>
+        <div class="section3-row">
+            <div class="img"><img src="https://html5up.net/uploads/demos/spectral/images/pic03.jpg" alt=""></div>
+            <div class="section3-content">
+                <h1>AUGUE ELEIFEND ALIQUET 
+                    SED CONDIMENTUM</h1>
+                <p>Aliquam ut ex ut augue consectetur interdum. 
+                     Donec hendrerit imperdiet. Mauris eleifend fringilla nullam aenean mi ligula.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+    <div class="section4">
+        <div class="section4-content">
+            <h2>ACCUMSAN MUS TORTOR NUNC ALIQUET</h2>
+            <hr>
+            <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend 
+               fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+        </div>
+        <div class="section4-container">
+            <div class="box">
+                <i class="bi bi-send"></i>
+                <div class="box-content">
+                    <h2>ARCU ACCUMSAM</h2>
+                    <p>Augue consectetur sed interdum 
+                        imperdiet et ipsum. Mauris lorem 
+                        tincidunt nullam amet leo Aenean 
+                        ligula consequat consequat.</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="bi bi-laptop"></i>
+                <div class="box-content">
+                    <h2>AC AUGUE EGET</h2>
+                    <p>Augue consectetur sed interdum 
+                        imperdiet et ipsum. Mauris lorem 
+                        tincidunt nullam amet leo Aenean 
+                        ligula consequat consequat.</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="bi bi-code-slash"></i>
+                <div class="box-content">
+                    <h2>MUS SCELERISQUE</h2>
+                    <p>Augue consectetur sed interdum 
+                        imperdiet et ipsum. Mauris lorem 
+                        tincidunt nullam amet leo Aenean 
+                        ligula consequat consequat.</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="bi bi-headphones"></i>
+                <div class="box-content">
+                    <h2>MAURIS IMPERDIET</h2>
+                    <p>Augue consectetur sed interdum 
+                        imperdiet et ipsum. Mauris lorem 
+                        tincidunt nullam amet leo Aenean 
+                        ligula consequat consequat.</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="bi bi-heart"></i>
+                <div class="box-content">
+                    <h2>AENEAN PRIMIS</h2>
+                    <p>Augue consectetur sed interdum 
+                        imperdiet et ipsum. Mauris lorem 
+                        tincidunt nullam amet leo Aenean 
+                        ligula consequat consequat.</p>
+                </div>
+            </div>
+            <div class="box">
+                <i class="bi bi-flag"></i>
+                <div class="box-content">
+                    <h2>TORTOR UT</h2>
+                    <p>Augue consectetur sed interdum
+                        imperdiet et ipsum. Mauris lorem 
+                        tincidunt nullam amet leo Aenean 
+                        ligula consequat consequat.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section5">
+        <div class="section5-overlay">
+            <div class="section5-left">
+                <h1>ARCUE UT VEL COMMODO</h1>
+                <p>Aliquam ut ex ut augue consectetur interdum <br>
+                    endrerit imperdiet amet eleifend fringilla.</p>
+            </div>
+            <div class="section5-right">
+                <button class="activate-btn">ACTIVATE</button>
+                <button class="learn-btn">LEARN MORE</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-icons">
+            <i class="bi bi-twitter"></i>
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-instagram"></i>
+            <i class="bi bi-dribbble"></i>
+            <i class="bi bi-envelope-fill"></i>
+        </div>
+        <div class="footer-text">
+            <span>© UNTITLED</span>
+            <span>|</span>
+            <span>DESIGN: <u>HTML5 UP</u></span>
+            <span>|</span>
+            <span>DEMO IMAGES: <u>UNSPLASH</u></span>
+        </div>
+    </div>
+</body>
+</html>
